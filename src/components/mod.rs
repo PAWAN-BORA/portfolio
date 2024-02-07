@@ -6,3 +6,4 @@ pub mod blog_post;
 pub mod services;
 pub mod resume;
 pub mod portfolies;
+pub mod contact;

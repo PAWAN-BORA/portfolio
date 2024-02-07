@@ -3,6 +3,7 @@
 use yew::prelude::*;
 use yew_router::prelude::*;
 use crate::components::common::sidebar::Sidebar;
+use crate::components::contact::Contact;
 use crate::components::home::Home;
 use crate::components::about::About;
 use crate::components::blog::Blog;
@@ -23,6 +24,8 @@ pub enum Route {
   Resume,
   #[at("/portfolio")]
   Portfolio,
+  #[at("/contact")]
+  Contact,
   #[at("/*")]
   NotFound,
 }
@@ -36,6 +39,7 @@ fn switch(routes: Route) -> Html {
       Route::BlogPost { id }=>html!(<BlogPost id={id}/>),
       Route::Resume => html! {<Resume/>},
       Route::Portfolio=> html! {<Portfolio/>},
+      Route::Contact=> html! {<Contact/>},
       Route::NotFound => html! { <h1>{ "404 for all" }</h1> },
   }
 }

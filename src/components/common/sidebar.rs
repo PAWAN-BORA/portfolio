@@ -58,9 +58,11 @@ pub fn Sidebar() -> Html {
             {"Blog"}
           </div>
         </Link<Route>>
-        <div class="side_bar_box">
-          {"Contact"}
-        </div>
+        <Link<Route> to={Route::Contact}>
+          <div class={if route==Route::Contact {"side_bar_box page_active"} else {"side_bar_box"}}>
+            {"Contact"}
+          </div>
+        </Link<Route>>
       </div>
       <div class="text-sm text-white text-center border-t border-gray-600 pt-4">
         { format!("@ {}. All Rights Reserved.", current_date.year()) }
